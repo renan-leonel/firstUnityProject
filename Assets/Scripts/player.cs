@@ -79,6 +79,11 @@ public class player : MonoBehaviour
             Destroy(gameObject);   
         }
 
+        if(collision.gameObject.tag == "Saw"){
+            gamecontroller.instance.showGameOver();
+            Destroy(gameObject);   
+        }
+
     }
     void OnCollisionExit2D(Collision2D collision){
         if(collision.gameObject.layer == 8){
