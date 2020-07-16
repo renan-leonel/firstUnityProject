@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 2758698599606703532}
   - component: {fileID: 2758698599606703526}
   - component: {fileID: 2758698599606703527}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Frog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ Transform:
   m_GameObject: {fileID: 2758698599606703533}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.98, y: 1.22, z: 0}
-  m_LocalScale: {x: 1.4721, y: 1.4721, z: 1.4721}
+  m_LocalScale: {x: 1.8913542, y: 1.8913542, z: 1.8913542}
   m_Children:
   - {fileID: 2758698599232412348}
   - {fileID: 2758698600159530775}
@@ -204,7 +204,9 @@ MonoBehaviour:
   headPoint: {fileID: 2758698600681060646}
   layer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 1280
+  boxCollider2D: {fileID: 2758698599606703531}
+  circleCollider2D: {fileID: 2758698599606703527}
 --- !u!58 &2758698599606703527
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -275,7 +277,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2758698600681060647}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.154, z: 0}
+  m_LocalPosition: {x: -0.008, y: 0.051, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2758698599606703528}

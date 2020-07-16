@@ -45,18 +45,29 @@ public class frog : MonoBehaviour
     
     }
 
+    bool playerDestroyed = false ;
     void OnCollisionEnter2D(Collision2D col){
         if(col.gameObject.tag == "Player"){
+
             float height = col.contacts[0].point.y - headPoint.position.y; //checa se o personagem ta batendo na cabeça do inimigo, subtraindo headpoint do ponto onde o personagem bateu no inimigo, pra verificar se é > 0
 
-            if(height > 0){
+            Debug.Log(height);
+
+            if(height > 0 && !playerDestroyed){
+
                 col.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 10, ForceMode2D.Impulse); // faz o personagem dar um pulo pra cima quando bate na cabeça do inimigo
                 speed = 0; // faz ele parar de andar quando levar o hit
                 anim.SetTrigger("die"); // faz a animação do sapo morrendo
                 boxCollider2D.enabled = false; // desativa o box collider
                 circleCollider2D.enabled = false; // desativa o circle collider
                 rig.bodyType = RigidbodyType2D.Kinematic; // muda o body time do rigidbody pra kinematic
+                
                 Destroy(gameObject,0.33f); // destroi o sapo dps de 0.33s
+            }
+            else{
+                playerDestroyed = true;
+                gamecontroller.instance.showGameOver();
+                Destroy(col.gameObject);
             }
         }
     }
